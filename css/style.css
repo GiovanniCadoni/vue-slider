@@ -52,6 +52,7 @@
     width: 100%;
     height: calc(100% / 5);
     object-fit: cover;
+    cursor: pointer;
 }
 
 .thumbs .active {

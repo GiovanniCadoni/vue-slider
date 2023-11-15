@@ -31,7 +31,11 @@ createApp({
                 },
             ],
             activeIndex: 0,
+            timer: null,
         };
+    },
+    created() {
+        this.startAutoPay;
     },
     methods: {
         showNext: function() {
@@ -47,6 +51,13 @@ createApp({
             } else {
                 this.activeIndex--;
             }
+        },
+        stopAutoPlay: function () {
+            clearInterval(this.timer);
+            this.timer = null;
+        },
+        startAutoPlay: function () {
+            this.timer = setInterval(this.showNext, 3000);
         },
     },
 }).mount("#app");

@@ -14,7 +14,7 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" @mouseover="stopAutoPlay" @mouseleave="startAutoPlay" tabindex="0">
 
                 <div class="item">
                     <img :src="games[activeIndex].image" :alt="games[activeIndex].title" >
@@ -29,7 +29,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="showPrev"></div>
                     <div class="next" @click="showNext"></div>
-                    <img v-for="(image, index) in games" :src="games[index].image" :alt="games[index].title" :class= "index === activeIndex ? 'active' : ''">
+                    <img v-for="(image, index) in games" :src="games[index].image" @click="showCurrent" :alt="games[index].title" :class= "index === activeIndex ? 'active' : ''">
                 </div>
 
             </div>
