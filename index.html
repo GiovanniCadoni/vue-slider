@@ -29,7 +29,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="showPrev"></div>
                     <div class="next" @click="showNext"></div>
-                    <img v-for="(image, index) in games" :src="games[index].image" @click="showCurrent" :alt="games[index].title" :class= "index === activeIndex ? 'active' : ''">
+                    <img v-for="(image, index) in games" :src="games[index].image" @click="clickShow(index)" :alt="games[index].title" :class= "index === activeIndex ? 'active' : ''">
                 </div>
 
             </div>
